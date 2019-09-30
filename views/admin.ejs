@@ -1,0 +1,40 @@
+<% include ./partials/header %>
+
+<div class="wrapper">
+            <section class="module-cover bg-dark parallax fullscreen text-center" data-background="" data-overlay="1" data-gradient="1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 m-auto">
+                            <div class="mb-4">
+                                <h5>Create a New Admin Account</h5>
+                            </div>
+                            <div class="mb-4">
+                                <form action="/signup" method="POST">
+                                	<div class="form-group">
+                                        <input class="form-control" type="text" name="name" placeholder="Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" type="email" name="email" placeholder="E-mail">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="username" placeholder="Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="adminCode" placeholder="Admin Code">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" type="password" name="password" placeholder="Pasword">
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-block btn-round btn-brand" type="submit">Login</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <p><small>Don't have an account yet? <a href="signin">Create account</a> <br>
+                                    Forgot your username or password? <a href="contact">Recover account</a></small></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+<% include ./partials/footer %>

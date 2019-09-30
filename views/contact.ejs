@@ -1,0 +1,102 @@
+<% include ./partials/header %>
+
+<div class="wrapper">
+            <!-- Hero-->
+            <section class="module-cover bg-dark parallax" data-background="assets/images/module-1.jpg" data-overlay="1" data-gradient="1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 m-auto text-center">
+                            <h1>Let's Talk</h1>
+                            <p class="lead">Please provide us with the address of your building in the message. <br> We will never share your information with third-parties.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+<!-- Hero end-->
+<!-- Contact-->
+            <section class="module pt-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 order-md-2">
+                            <div class="space" data-mb="-100px"></div>
+                            <div class="card card-xl z-index-10">
+                                <div class="card-body">
+                                    <form id="contact-form" method="post" novalidate>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input class="form-control" type="text" name="name" placeholder="Name" required="">
+                                                    <p class="help-block text-danger"></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input class="form-control" type="email" name="email" placeholder="E-mail" required="">
+                                                    <p class="help-block text-danger"></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input class="form-control" type="text" name="subject" placeholder="Subject" required="">
+                                                    <p class="help-block text-danger"></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <textarea class="form-control" name="message" placeholder="Message" rows="12" required=""></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input class="btn btn-block btn-brand" type="submit" value="Send Message">
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- Ajax response-->
+                                    <div class="ajax-response text-center" id="contact-response"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 order-md-1">
+                            <div class="mt-5">
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <h6 class="text-uppercase"><span class="small bold">Phone</span></h6>
+                                    </li>
+                                    <li>(669) 231-9042</li>
+                                </ul>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <h6 class="text-uppercase"><span class="small bold">Location</span></h6>
+                                    </li>
+                                    <li>2580 Senter Rd<br> San Jose, CA</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2 order-md-3">
+                            <div class="mt-5">
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <h6 class="text-uppercase"><span class="small bold">Email</span></h6>
+                                    </li>
+                                    <li>info@elitemaintenancecorp.com</li>
+                                </ul>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <h6 class="text-uppercase"><span class="small bold">Social</span></h6>
+                                    </li>
+                                    <li>
+                                        <ul class="social-icons">
+                                            <li><i class="ti-twitter"></i></li>
+                                            <li><i class="ti-instagram"></i></li>
+                                            <li><i class="ti-pinterest"></i></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Contact end-->
+
+<% include ./partials/footer %>

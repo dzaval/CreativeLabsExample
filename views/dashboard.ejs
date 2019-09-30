@@ -1,0 +1,45 @@
+<% include ./partials/header %>
+
+<div class="wrapper">
+            <!-- Hero-->
+            <section class="module-cover bg-dark parallax" data-background="assets/images/module-1.jpg" data-overlay="1" data-gradient="1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 m-auto text-center">
+                            <h1>Manage Your Accounts</h1>
+                            <p class="lead">Click on a user to be able to add or remove <br> photographs from their gallery.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Hero end-->
+            <!-- Services-->
+            <section class="module">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="space" data-mt="60px"></div>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <!-- <div class="col-lg-4">
+                            <div class="wave-pulse wave-pulse-1"></div>
+                            <div class="wave-pulse wave-pulse-2"></div>
+                            <div class="wave-pulse wave-pulse-3"></div>
+                            <p class="text-center"><img class="relative z-index-10" src="assets/images/main/iphoneCopy2.png" alt=""></p>
+                        </div> -->
+                        <% if(typeof allUsers != "undefined") { %>
+                        	<% allUsers.forEach(function(currentUser) { %>
+                                <% if(!currentUser.isAdmin) { %>
+                                    <div class="col-lg-4">
+                                        <div class="display-4 p-5"><a href="<%= currentUser.id %>"><%= currentUser.username %></div>
+                                    </div>
+                                    <% } %>
+                        	<% }); %>
+                        <% } %>
+                    </div>
+                </div>
+            </section>
+            <!-- Services end-->
+
+<% include ./partials/footer %>

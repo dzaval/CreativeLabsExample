@@ -1,0 +1,59 @@
+<% include ./partials/header %>
+
+<div class="container-fluid p-0">
+	<div class="jumbotron pt-10">
+        <% if(!currentUser.isAdmin) { %>
+		    <h1 class="display-3 pt-10">Welcome to your gallery, <%= currentUser.name %>!</h1>
+		    <p>View our most recent work for your stunning property.</p>
+        <% } else { %>
+            <h1 class="display-3 pt-10">Currently Viewing <%= owner.name %>'s Gallery</h1>
+            <div class=" pt-10">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 m-auto">
+                            <div class="mb-4">
+                                <h5>Add Photograph</h5>
+                            </div>
+                            <div class="mb-4">
+                                <form action="/profile" method="POST">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="photos" placeholder="URL to Image" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-block btn-round btn-brand" type="submit">Upload</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <% } %>
+	</div>
+</div>
+
+<% owner.photos.forEach(function(images) { %>
+    <h1>Image Goes Here</h1>
+<% }); %>
+
+<div class="container-fluid px-5">
+    <h2>From: 10/08/2019 to 10/15/2019</h2>
+    <p class="lead">We look forward to servicing your company again!</p>
+    <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-12 pb-5">
+            <img alt="" src="assets/images/mainBackground.jpg" class="img-fluid rounded">
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12 pb-5">
+            <img  alt="" src="assets/images/mainBackgroundCropped.jpg" class="img-fluid rounded">
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12 pb-5">
+            <img src="assets/images/mainBackground.jpg" alt="AltText" class="img-fluid rounded">
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12 pb-5">
+            <img alt="" src="assets/images/mainBackground.jpg" class="img-fluid rounded">
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12 pb-5">
+            <img alt="" src="assets/images/mainBackground.jpg" class="img-fluid rounded">
+        </div>
+    </div>
+  </div>
+
+<% include ./partials/footer %>

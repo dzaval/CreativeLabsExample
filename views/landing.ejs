@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Elite Maintenance</title>
+        <!-- Favicons-->
+        <link rel="shortcut icon" href="assets/images/EM-Crop.png">
+        <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-touch-icon-114x114.png">
+        <!-- Web Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+        <!-- Plugins-->
+        <link href="assets/css/plugins.min.css" rel="stylesheet">
+        <!-- Template core CSS-->
+        <link href="assets/css/template.min.css" rel="stylesheet">
+    </head>
+    <body data-spy="scroll" data-target="#navbar-1" data-offset="120">
+        <!-- Preloader -->
+        <div class="page-loader">
+            <div class="loader">
+                <div class="loader-shadow"></div>
+                <div class="loader-box"></div>
+            </div>
+        </div>
+        <!-- Preloader end-->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-logo-border fixed-top bg-dark navbar-transparent"><a class="navbar-brand" href="/"><img src="assets/images/EM-light.png" width="60"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services">Services</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li> -->
+                    <li class="nav-item"><a class="nav-link" href="contact">Contact Us</a></li>
+                </ul>
+                <!-- Right Nav-->
+                <ul class="navbar-nav">
+                	<% if(!currentUser) { %>
+                    	<li class="nav-item"><a class="nav-link" href="login">Log in</a></li>
+                    	<form class="form-inline"><a class="btn btn-sm btn-brand" href="signup">Sign up</a></form>
+                    <% } else if(!currentUser.isAdmin) { %>
+                    	<li class="nav-item"><a class="nav-link" href="/<%= currentUser.id %>"><%= currentUser.username %></a></li>
+                    	<form class="form-inline"><a class="btn btn-sm btn-brand" href="/logout">Log out</a></form>
+                    <% } else  { %>
+                    	<li class="nav-item"><a class="nav-link" href="/dashboard">Manage Accounts</a></li>
+                    	<form class="form-inline"><a class="btn btn-sm btn-brand" href="/logout">Log out</a></form>
+                    <% } %>
+                </ul>
+            </div>
+        </nav>
+		<div class="wrapper">
+		            <!-- Hero-->
+		            <section class="module-cover-slides fullscreen">
+		                <ul class="slides-container">
+		                    <li class="bg-dark parallax text-center" data-overlay="0.7"><img src="assets/images/mainBackground.jpg" alt="">
+		                        <div class="container">
+		                            <div class="row">
+		                                <div class="col-md-12">
+		                                    <h1><i class="ti-settings"></i></h1>
+		                                    <h1 class="mb-4">Elite Maintenance</h1>
+		                                    <p class="lead mb-5"><strong>A Superior Service</strong></p>
+		                                    <p class="btn-list"><a class="btn btn-lg btn-brand" href="contact">Get Started</a><a class="btn btn-lg btn-outline-new-white" href="about">Learn More</a></p>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </li>
+		                    <li class="bg-dark parallax text-center" data-overlay="0.7"><img src="assets/images/module-1.jpg" alt="">
+		                        <div class="container">
+		                            <div class="row">
+		                                <div class="col-md-12">
+		                                    <h1><i class="icon-cup icons"></i></h1>
+		                                    <h1 class="mb-4">Find a company <br>that understands your needs</h1>
+		                                    <p class="lead mb-5">Because we understand that first impressions matter, we offer  <br> outstanding services at a truly competitive price.</p>
+		                                    <p class="btn-list"><a class="btn btn-lg btn-brand" href="contact">Get Started</a><a class="btn btn-lg btn-outline-new-white" href="about">Learn More</a></p>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </li>
+		                    <li class="bg-dark parallax text-center" data-overlay="0.9" data-gradient="1"><img src="assets/images/module-4.jpg" alt="">
+		                        <div class="container">
+		                            <div class="row">
+		                                <div class="col-md-12">
+		                                    <h1><i class="icon-camera icons"></i></h1>
+		                                    <h1 class="mb-4">Get new insights <br>into your property</h1>
+		                                    <p class="lead mb-5">Our experts will assess your property to suggest a service <br>  bundle to leave your building looking spotless.</p>
+		                                    <p class="btn-list"><a class="btn btn-lg btn-brand" href="contact">Get Started</a><a class="btn btn-lg btn-outline-new-white" href="about">Learn More</a></p>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </li>
+		                </ul>
+		                <div class="slides-navigation"><a class="prev" href="#"><span class="ti-angle-left"></span></a><a class="next" href="#"><span class="ti-angle-right"></span></a></div>
+		            </section>
+		            <!-- Hero end-->
+
+		            <!-- Services-->
+		            <section class="module pt-8 pb-8">
+		                <div class="container">
+		                    <div class="row">
+		                        <div class="col-lg-4 col-md-6">
+		                            <div class="icon-box">
+		                                <div class="icon-box-icon"><span class="ti-agenda"></span></div>
+		                                <div class="icon-box-title">
+		                                    <h6>Great Documentation</h6>
+		                                </div>
+		                                <div class="icon-box-content">
+		                                    <p>See the work being performed on your building with high quality photographs.</p>
+		                                </div>
+		                                <div class="icon-box-link"><a href="readMore">Read More &rarr;</a></div>
+		                            </div>
+		                        </div>
+		                        <div class="col-lg-4 col-md-6">
+		                            <div class="icon-box">
+		                                <div class="icon-box-icon"><span class="ti-mobile"></span></div>
+		                                <div class="icon-box-title">
+		                                    <h6>Let's Connect</h6>
+		                                </div>
+		                                <div class="icon-box-content">
+		                                    <p>Because modern businesses require transformative solutions.</p>
+		                                </div>
+		                                <div class="icon-box-link"><a href="readMore">Read More &rarr;</a></div>
+		                            </div>
+		                        </div>
+		                        <div class="col-lg-4 col-md-6">
+		                            <div class="icon-box">
+		                                <div class="icon-box-icon"><span class="ti-folder"></span></div>
+		                                <div class="icon-box-title">
+		                                    <h6>Disrupting the Industry</h6>
+		                                </div>
+		                                <div class="icon-box-content">
+		                                    <p>Discover why companies have switched from their former providers to us.</p>
+		                                </div>
+		                                <div class="icon-box-link"><a href="readMore">Read More &rarr;</a></div>
+		                            </div>
+		                        </div>
+		                        <div class="col-lg-4 col-md-6">
+		                            <div class="icon-box">
+		                                <div class="icon-box-icon"><span class="ti-layout"></span></div>
+		                                <div class="icon-box-title">
+		                                    <h6>Responsive Team</h6>
+		                                </div>
+		                                <div class="icon-box-content">
+		                                    <p>Because emergencies cannot be forseen, we will always be one call or text away 24/7.</p>
+		                                </div>
+		                                <div class="icon-box-link"><a href="readMore">Read More &rarr;</a></div>
+		                            </div>
+		                        </div>
+		                        <div class="col-lg-4 col-md-6">
+		                            <div class="icon-box">
+		                                <div class="icon-box-icon"><span class="ti-gift"></span></div>
+		                                <div class="icon-box-title">
+		                                    <h6>Giving Back</h6>
+		                                </div>
+		                                <div class="icon-box-content">
+		                                    <p>Elite Maintenance believes in contributing back to local communities.</p>
+		                                </div>
+		                                <div class="icon-box-link"><a href="readMore">Read More &rarr;</a></div>
+		                            </div>
+		                        </div>
+		                        <div class="col-lg-4 col-md-6">
+		                            <div class="icon-box">
+		                                <div class="icon-box-icon"><span class="ti-settings"></span></div>
+		                                <div class="icon-box-title">
+		                                    <h6>Your Business. Your Way.</h6>
+		                                </div>
+		                                <div class="icon-box-content">
+		                                    <p>We will find the best time to perform services and minimize business interruptions.</p>
+		                                </div>
+		                                <div class="icon-box-link"><a href="#">Read More &rarr;</a></div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </section>
+		            <!-- Services end-->
+
+		            <!-- Portfolio-->
+		            <section class="module bg-gray pb-0">
+		                <div class="container">
+		                    <div class="row">
+		                        <div class="col-md-10 col-lg-6 m-auto text-center">
+		                            <h2>Services Through a Lense.</h2>
+		                            <p class="lead">Focus on what your company does best and leave the rest to us! We always provide photos to document our stellar work.</p>
+		                        </div>
+		                    </div>
+		                    <div class="row">
+		                        <div class="col-md-12">
+		                            <div class="space" data-mb="60px"></div>
+		                        </div>
+		                    </div>
+		                    <div class="row">
+		                        <div class="col-md-12">
+		                            <ul class="filters serif">
+		                                <li><a class="current" href="#" data-filter="*">All<sup><small> 6</small></sup></a></li>
+		                                <li><a href="#" data-filter=".branding">Sweeping<sup><small> 2</small></sup></a></li>
+		                                <li><a href="#" data-filter=".digital">Pressure Washing<sup><small> 2</small></sup></a></li>
+		                                <li><a href="#" data-filter=".packaging">Landscaping<sup><small> 2</small></sup></a></li>
+		                            </ul>
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="container-fluid">
+		                    <div class="row row-portfolio" data-columns="3">
+		                        <div class="grid-sizer"></div>
+		                        <div class="portfolio-item branding bg-dark">
+		                            <div class="portfolio-item-wrapper">
+		                                <div class="portfolio-item-img"><img src="assets/images/mainBackground.jpg" alt=""></div>
+		                                <div class="portfolio-item-caption">
+		                                    <h5 class="portfolio-item-title">Whole Foods, Fremont</h5><span class="portfolio-item-subtitle serif">Sweeping</span>
+		                                </div><!-- <a class="portfolio-item-link" href="portfolio-single-1.html"></a> -->
+		                            </div>
+		                        </div>
+		                        <div class="portfolio-item digital bg-dark">
+		                            <div class="portfolio-item-wrapper">
+		                                <div class="portfolio-item-img"><img src="assets/images/pressureWasher.JPG" alt=""></div>
+		                                <div class="portfolio-item-caption">
+		                                    <h5 class="portfolio-item-title">Pressure Washing Unit</h5><span class="portfolio-item-subtitle serif">Storage</span>
+		                                </div><!-- <a class="portfolio-item-link" href="portfolio-single-1.html"></a> -->
+		                            </div>
+		                        </div>
+		                        <div class="portfolio-item packaging bg-dark">
+		                            <div class="portfolio-item-wrapper">
+		                                <div class="portfolio-item-img"><img src="assets/images/portfolio/dayPorting.jpeg" alt=""></div>
+		                                <div class="portfolio-item-caption">
+		                                    <h5 class="portfolio-item-title">Netflix, Los Gatos</h5><span class="portfolio-item-subtitle serif">Landscaping</span>
+		                                </div><!-- <a class="portfolio-item-link" href="portfolio-single-1.html"></a> -->
+		                            </div>
+		                        </div>
+		                        <div class="portfolio-item packaging bg-dark">
+		                            <div class="portfolio-item-wrapper">
+		                                <div class="portfolio-item-img"><img src="assets/images/portfolio/washing-4.jpg" alt=""></div>
+		                                <div class="portfolio-item-caption">
+		                                    <h5 class="portfolio-item-title">Costco, Fremont</h5><span class="portfolio-item-subtitle serif">Landscaping</span>
+		                                </div><<!-- a class="portfolio-item-link" href="portfolio-single-1.html"></a> -->
+		                            </div>
+		                        </div>
+		                        <div class="portfolio-item digital bg-dark">
+		                            <div class="portfolio-item-wrapper">
+		                                <div class="portfolio-item-img"><img src="assets/images/portfolio/washing-1.jpg" alt=""></div>
+		                                <div class="portfolio-item-caption">
+		                                    <h5 class="portfolio-item-title">Costco, Hayward</h5><span class="portfolio-item-subtitle serif">Pressure Washing</span>
+		                                </div><!-- <a class="portfolio-item-link" href="portfolio-single-1.html"></a> -->
+		                            </div>
+		                        </div>
+		                        <div class="portfolio-item branding bg-dark">
+		                            <div class="portfolio-item-wrapper">
+		                                <div class="portfolio-item-img"><img src="assets/images/fleet.jpg" alt=""></div>
+		                                <div class="portfolio-item-caption">
+		                                    <h5 class="portfolio-item-title">Sweeping Unit</h5><span class="portfolio-item-subtitle serif">Storage</span>
+		                                </div><!-- <a class="portfolio-item-link" href="portfolio-single-1.html"></a> -->
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </section>
+		            <!-- Portfolio end-->
+
+		            <!-- Testimonials-->
+		            <section class="module bg-dark parallax" data-background="" data-overlay="1" data-gradient="1">
+		                <div class="container">
+		                    <div class="row">
+		                        <div class="col-md-12">
+		                            <div class="space" data-mt="60px"></div>
+		                        </div>
+		                    </div>
+		                    <div class="row">
+		                        <div class="col-md-10 m-auto">
+		                            <div class="review-slides owl-carousel">
+		                                <div class="review">
+		                                    <div class="review-icons"><img src="assets/images/EM-light.png" alt=""></div>
+		                                    <div class="review-content">
+		                                        <blockquote>
+		                                            <h2>The best maintenance company for your business.</h2>
+		                                            <p class="btn-list pt-4"><a class="btn btn-lg btn-outline-new-white" href="about">Learn More</a></p>
+		                                        </blockquote>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="row">
+		                        <div class="col-md-12">
+		                            <div class="space" data-mb="60px"></div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </section>
+		            <!-- Testimonials end-->
+
+		            <!-- Posts-->
+		            <section class="module">
+		                <div class="container">
+		                    <div class="row">
+		                        <div class="col-md-10 col-lg-6 m-auto text-center">
+		                            <h2>Latest Works.</h2>
+		                            <p class="lead">See how our company is helping local communities and the environment through the best eco-friendly business practices.</p>
+		                        </div>
+		                    </div>
+		                    <div class="row">
+		                        <div class="col-md-12">
+		                            <div class="space" data-mb="60px"></div>
+		                        </div>
+		                    </div>
+		                    <div class="card-deck">
+		                        <div class="card card-xl js-tilt bg-brand" data-background="assets/images/blog/5.jpg">
+		                            <div class="card-body mb-10">
+		                                <h4><a href="#">An Unconditional Commitment to the Ocean</a></h4>
+		                            </div>
+		                            <div class="card-footer"><!-- <a href="#">Read More &rarr;</a> --></div>
+		                        </div>
+		                        <div class="card card-xl js-tilt bg-danger" data-background="assets/images/blog/3.jpg">
+		                            <div class="card-body mb-10">
+		                                <h4><a href="#">Going Green is the Elite Maintenance Way</a></h4>
+		                            </div>
+		                            <div class="card-footer"><!-- <a href="#">Read More &rarr;</a> --></div>
+		                        </div>
+		                        <div class="card card-xl js-tilt bg-info" data-background="assets/images/blog/7.jpg">
+		                            <div class="card-body mb-10">
+		                                <h4><a href="#">Introducing Our Brand New Nite-Hawk Sweeper Truck</a></h4>
+		                            </div>
+		                            <div class="card-footer"><!-- <a href="#">Read More &rarr;</a> --></div>
+		                        </div>
+		                    </div>
+		                    <div class="row">
+		                        <div class="col-md-12">
+		                            <div class="space" data-mb="40px"></div>
+		                        </div>
+		                    </div>
+		                    <div class="row">
+		                        <div class="col-md-12">
+		                            <div class="text-center">
+		                                <p class="lead">Like what you see? <a href="contact">Request an Estimate &rarr;</a></p>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </section>
+		            <!-- Posts end-->
+
+		            <section class="module bg-dark parallax pb-0" data-background="" data-overlay="1" data-gradient="1">
+		                <div class="container">
+		                    <div class="row">
+		                        <div class="col-md-10 col-lg-6 m-auto text-center">
+		                            <h2>Ready to Request an Estimate?</h2>
+		                            <p class="lead">Send us an email and we will get back to you soon! <br> No commitments. No hidden fees.</p>
+		                        </div>
+		                    </div>
+		                    <div class="row">
+		                        <div class="col-md-12">
+		                            <div class="space" data-mb="40px"></div>
+		                        </div>
+		                    </div>
+		                    <div class="row">
+		                        <div class="col-md-12">
+		                            <p class="text-center"><a class="btn btn-lg btn-circle btn-danger" href="contact">Contact Us</a></p>
+		                        </div>
+		                    </div>
+		                    <div class="row">
+		                        <div class="col-md-12">
+		                            <div class="space" data-mb="60px"></div>
+		                        </div>
+		                    </div>
+		                    <div class="row">
+		                        <div class="col-md-11 m-auto">
+		                            <p><img src="assets/images/main/iphone-4.png" alt=""></p>
+		                            <div class="space" data-mb="-120px"></div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </section>
+		            <!-- Callout end-->
+
+<% include ./partials/footer %>

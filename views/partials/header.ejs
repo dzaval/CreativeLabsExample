@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Elite Maintenance</title>
+        <!-- Favicons-->
+        <link rel="shortcut icon" href="assets/images/EM-Crop.png">
+        <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-touch-icon-114x114.png">
+        <!-- Web Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+        <!-- Plugins-->
+        <link href="assets/css/plugins.min.css" rel="stylesheet">
+        <!-- Template core CSS-->
+        <link href="assets/css/template.min.css" rel="stylesheet">
+    </head>
+    <body data-spy="scroll" data-target="#navbar-1" data-offset="120">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-logo-border fixed-top bg-dark navbar-transparent"><a class="navbar-brand" href="/"><img src="assets/images/EM-light.png" width="60"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact">Contact Us</a></li>
+                </ul>
+                <!-- Right Nav-->
+                <ul class="navbar-nav">
+                    <% if(!currentUser) { %>
+                        <li class="nav-item"><a class="nav-link" href="login">Log in</a></li>
+                        <form class="form-inline"><a class="btn btn-sm btn-brand" href="signup">Sign up</a></form>
+                    <% } else if(!currentUser.isAdmin) { %>
+                        <li class="nav-item"><a class="nav-link" href="/<%= currentUser.id %>"><%= currentUser.username %></a></li>
+                        <form class="form-inline"><a class="btn btn-sm btn-brand" href="/logout">Log out</a></form>
+                    <% } else  { %>
+                        <li class="nav-item"><a class="nav-link" href="/dashboard">Manage Accounts</a></li>
+                        <form class="form-inline"><a class="btn btn-sm btn-brand" href="/logout">Log out</a></form>
+                    <% } %>
+                </ul>
+            </div>
+        </nav>
